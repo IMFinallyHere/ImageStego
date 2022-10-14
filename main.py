@@ -39,12 +39,8 @@ class ImageStego:
     def browse_file(self):
         self.text_box.delete('0.0', 'end')
         self.image_box.configure(text='Image Displaying Area', image='')
+        self.img_path = filedialog.askopenfilename(initialdir="/", title="Select a File", filetypes=(("Image", ".jpg .jpeg .png"),))
 
-        self.img_path = filedialog.askopenfilename(initialdir="/",
-                                                   title="Select a File",
-                                                   filetypes=(("Image",
-                                                               ".jpg .jpeg .png"),
-                                                              ))
         if self.img_path:
             self.encode_btn.configure(state='normal')
             self.decode_btn.configure(state='normal')
